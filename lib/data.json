@@ -1,0 +1,92 @@
+[
+    {
+        "name" : "MEGATECH BMS",
+        "mac_address" : "A4:C1:37:30:87:B9" , 
+        "soc" :  "90",
+        "states" : {
+            "charging" : true,
+            "balance" : false,
+            "dis_mos" : true,
+            "protection" : false
+        },
+
+        "values" :{
+            "total_volt" : 52.52,
+            "current" : 0.00,
+            "power" : 0.00,
+            "vol_high" : 4.087,
+            "vol_low" : 3.75,
+            "vol_diff" : 0.337,
+            "ave_vol" : 4.04,
+            "cycle_index" : 78
+        },
+        "temperature" :[
+            {
+                "mos" : 24.6,
+                "1" : 24.6,
+                "2" : 24.9
+            },
+            {
+                "mos" : 76.10,
+                "1" : 76.10,
+                "2" : 76.82
+            }
+        ],
+
+        "svi":[
+            {
+                "name" : "Cell 1",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 2",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 3",
+                "value" : 4.08
+            },
+            {
+                "name" : "Cell 4",
+                "value" : 4.06
+            },
+            {
+                "name" : "Cell 5",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 6",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 7",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 8",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 9",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 10",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 11",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 12",
+                "value" : 4.067
+            },
+            {
+                "name" : "Cell 13",
+                "value" : 4.067
+            }
+        ]
+
+    }
+]
