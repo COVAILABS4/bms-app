@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class Dashboard extends StatelessWidget {
-  late Map<String, dynamic> data;
+  late Map<dynamic, dynamic> data;
 
   Dashboard({required this.data});
 
@@ -22,7 +22,7 @@ class Dashboard extends StatelessWidget {
               macAddress: data['mac_address'],
             ),
             const SizedBox(height: 20),
-            SOCGauge(soc: int.parse(data['soc'])),
+            SOCGauge(soc: data['soc']),
             const SizedBox(height: 20),
             InfoContainer(
               data: data,

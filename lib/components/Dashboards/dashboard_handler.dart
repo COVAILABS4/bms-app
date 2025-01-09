@@ -2,7 +2,7 @@ import 'package:bms/components/Dashboards/dash.dart';
 import 'package:flutter/material.dart';
 
 class DashboardHandler extends StatefulWidget {
-  final List<Map<String, dynamic>> data;
+  final List<Map<dynamic, dynamic>> data;
 
   DashboardHandler({required this.data});
 
@@ -11,7 +11,7 @@ class DashboardHandler extends StatefulWidget {
 }
 
 class _DashboardHandlerState extends State<DashboardHandler> {
-  late List<Map<String, dynamic>> data; // Declare data variable here
+  late List<Map<dynamic, dynamic>> data; // Declare data variable here
   int currentIndex = 0;
 
   @override
@@ -58,13 +58,13 @@ class _DashboardHandlerState extends State<DashboardHandler> {
             data: data[currentIndex],
           ),
           _getButton(
-            left: 10,
+            left: 20,
             top: 50,
             onPressed: previousData,
             icon: Icons.arrow_back,
           ),
           _getButton(
-            right: 10,
+            right: 20,
             top: 50,
             onPressed: nextData,
             icon: Icons.arrow_forward,
@@ -84,6 +84,7 @@ class _DashboardHandlerState extends State<DashboardHandler> {
     required IconData icon,
   }) {
     return Positioned(
+      width: 20,
       left: left,
       right: right,
       top: top,
@@ -91,8 +92,11 @@ class _DashboardHandlerState extends State<DashboardHandler> {
       child: FloatingActionButton(
         onPressed: onPressed,
         mini: true,
-        backgroundColor: Colors.blue,
-        child: Icon(icon, color: Colors.white),
+        backgroundColor: Color(0xFF00BFFF),
+        child: Text(
+          left == null ? ">" : "<",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

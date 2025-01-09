@@ -1,9 +1,11 @@
 import 'package:bms/components/SVI/svi.dart';
 import 'package:bms/components/info/section1.dart';
+import 'package:bms/components/info/section2.dart';
+import 'package:bms/components/info/section3.dart';
 import 'package:flutter/material.dart';
 
 class InfoContainer extends StatelessWidget {
-  final Map<String, dynamic> data;
+  final Map<dynamic, dynamic> data;
 
   InfoContainer({required this.data});
 
@@ -40,6 +42,10 @@ class InfoContainer extends StatelessWidget {
       child: Column(
         children: [
           section1(data['states']),
+          greyLine(),
+          section2(data['values'], context),
+          greyLine(),
+          TemperatureComponent(temperatureData: data['temperature']),
           greyLine(),
           SVI(data: data['svi']),
           greyLine(),

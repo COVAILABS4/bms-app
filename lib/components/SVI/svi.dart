@@ -19,7 +19,7 @@ class SVI extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height / 2,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

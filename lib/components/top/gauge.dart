@@ -50,7 +50,7 @@ class SOCGauge extends StatelessWidget {
       height: 200,
       width: 200,
       child: CustomPaint(
-        painter: RadialGaugePainter(percentage: soc as double),
+        painter: RadialGaugePainter(percentage: soc),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +80,7 @@ class SOCGauge extends StatelessWidget {
 }
 
 class RadialGaugePainter extends CustomPainter {
-  final double percentage;
+  final int percentage;
 
   RadialGaugePainter({required this.percentage});
 

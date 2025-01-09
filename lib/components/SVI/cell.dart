@@ -34,7 +34,7 @@ class Cell extends StatelessWidget {
           children: [
             // Index in Rounded Black Border
             Container(
-              width: 20,
+              width: 15,
               height: 20,
               padding: EdgeInsets.all(2),
               decoration: BoxDecoration(

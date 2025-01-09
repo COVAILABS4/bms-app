@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   syncfusion_flutter_gauges: ^28.1.38
+  mqtt_client: ^10.5.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/images/vol_diff_icon.png
     - assets/images/ave_vol_icon.png
     - assets/images/cycle_index_icon.png
+    - assets/images/temp.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
