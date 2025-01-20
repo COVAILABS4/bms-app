@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'cell.dart';
 
 class SVI extends StatelessWidget {
-  final List<Map<String, dynamic>> data;
+  final List<dynamic> data;
 
   SVI({required this.data});
 

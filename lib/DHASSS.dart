@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final List<Map<String, dynamic>> mockData = [
+  final List<dynamic> mockData = [
     {
       "name": "MEGATECH BMS 1",
       "mac_address": "A4:C1:37:30:87:B9",

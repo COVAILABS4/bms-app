@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final List<Map<String, dynamic>> sviData = [
+  final List<dynamic> sviData = [
     {"name": "Cell 1", "value": 4.067},
     {"name": "Cell 2", "value": 4.067},
     {"name": "Cell 3", "value": 4.08},

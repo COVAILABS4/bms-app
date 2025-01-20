@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TemperatureComponent extends StatelessWidget {
-  final List<Map<String, double>> temperatureData;
+  final List<dynamic> temperatureData;
 
   const TemperatureComponent({Key? key, required this.temperatureData})
       : super(key: key);
@@ -31,7 +31,7 @@ class TemperatureComponent extends StatelessWidget {
     );
   }
 
-  Widget _buildTemperatureColumn(Map<String, double> data, String unit) {
+  Widget _buildTemperatureColumn(dynamic data, String unit) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
