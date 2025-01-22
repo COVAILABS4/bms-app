@@ -7,7 +7,14 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 import 'package:bms/components/Dashboards/dash.dart';
 
 class DashboardHandler extends StatefulWidget {
-  const DashboardHandler({Key? key}) : super(key: key);
+  final List<Map<String, String>> topics; // Pass topics via constructor
+  final int initialIndex; // Pass initial index via constructor
+
+  const DashboardHandler({
+    Key? key,
+    required this.topics,
+    this.initialIndex = 0, // Default to 0 if not provided
+  }) : super(key: key);
 
   @override
   _DashboardHandlerState createState() => _DashboardHandlerState();
@@ -20,15 +27,10 @@ class _DashboardHandlerState extends State<DashboardHandler> {
     1883,
   );
 
-  final List<Map<String, String>> topics = [
-    {"name": "BMS-0", "topic_name": "bms-0"},
-    {"name": "BMS-1", "topic_name": "bms-1"},
-    {"name": "BMS-2", "topic_name": "bms-2"},
-    {"name": "BMS-3", "topic_name": "bms-3"},
-  ];
+  late final List<Map<String, String>> topics; // Topics from constructor
+  late int currentIndex; // Current index from constructor
 
   Map<String, dynamic>? currentData;
-  int currentIndex = 0;
   Timer? refreshTimer;
   bool isLoading = true;
   Timer? loadingTimer;
@@ -37,6 +39,9 @@ class _DashboardHandlerState extends State<DashboardHandler> {
   void initState() {
     super.initState();
     _initializeMQTT();
+    topics = widget.topics; // Assign topics from widget
+    currentIndex = widget.initialIndex; // Assign initial index from widget
+
     // _startAutoRefresh();
     _startLoadingTimer();
   }
