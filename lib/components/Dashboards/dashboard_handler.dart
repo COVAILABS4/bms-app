@@ -31,7 +31,6 @@ class _DashboardHandlerState extends State<DashboardHandler> {
   late int currentIndex; // Current index from constructor
 
   Map<String, dynamic>? currentData;
-  Timer? refreshTimer;
   bool isLoading = true;
   Timer? loadingTimer;
 
@@ -41,8 +40,6 @@ class _DashboardHandlerState extends State<DashboardHandler> {
     _initializeMQTT();
     topics = widget.topics; // Assign topics from widget
     currentIndex = widget.initialIndex; // Assign initial index from widget
-
-    // _startAutoRefresh();
     _startLoadingTimer();
   }
 
@@ -123,14 +120,6 @@ class _DashboardHandlerState extends State<DashboardHandler> {
         }
       });
     }
-  }
-
-  void _startAutoRefresh() {
-    refreshTimer = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (client.connectionStatus!.state == MqttConnectionState.connected) {
-        _subscribeToTopic(currentIndex);
-      }
-    });
   }
 
   void _subscribeToTopic(int index) {
@@ -289,7 +278,6 @@ class _DashboardHandlerState extends State<DashboardHandler> {
 
   @override
   void dispose() {
-    refreshTimer?.cancel();
     loadingTimer?.cancel();
     client.disconnect();
     super.dispose();
